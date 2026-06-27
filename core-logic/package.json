@@ -9,10 +9,15 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@types/node": "^26.0.1",
     "typescript": "^6.0.3",
     "vitest": "^4.1.9"
+  },
+  "dependencies": {
+    "audio-decode": "^3.11.0",
+    "pitchfinder": "^2.3.4",
+    "web-audio-api": "^1.5.1"
   }
 }
