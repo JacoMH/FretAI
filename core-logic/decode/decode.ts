@@ -5,7 +5,7 @@ const { AudioContext } = webAudio;
 import decode from 'audio-decode';
 import { readFileSync } from 'fs';
 
-export const decodeAudioFile = async (file: File): Promise<Float32Array> => {
+export const decodeAudioFile = async (file: File): Promise<{samples: Float32Array, sampleRate: number}> => {
 
     //convert file to arrayBuffer for decoding (currently raw compressed binary bytes)
     const arrayBuffer = await file.arrayBuffer();
@@ -20,6 +20,6 @@ export const decodeAudioFile = async (file: File): Promise<Float32Array> => {
         throw new Error("Audio file does not contain any channel data.");
     }
     else {
-        return audioBuffer.channelData[0]; //get the PCM float32 samples for the first channel (mono)
+        return { samples: audioBuffer.channelData[0], sampleRate: audioBuffer.sampleRate }; //get the PCM float32 samples for the first channel (mono)
     }
 }
