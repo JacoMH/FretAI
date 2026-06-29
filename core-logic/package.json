@@ -16,6 +16,7 @@
     "vitest": "^4.1.9"
   },
   "dependencies": {
+    "@tonejs/midi": "^2.0.28",
     "audio-decode": "^3.11.0",
     "pitchfinder": "^2.3.4",
     "web-audio-api": "^1.5.1"
